@@ -12,7 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerLogIn from './Components/Login/CustomerLogIn';
 import EmpoloyeeLogIn from './Components/Login/EmpoloyeeLogIn';
 import AgentLogIn from './Components/Login/AgentLogIn';
-
+import TackenHome from "./Components/EmployeeSide/TackenTicket/TackenHome";
+import EmployeeHome from "./Components/EmployeeSide/EmployeeHome";
 export default function App() {
   return (
     <>
@@ -30,7 +31,7 @@ export default function App() {
         <Route path="/CustomerLogIn" element={<CustomerLogIn />} />
         <Route path="/EmpoloyeeLogIn" element={<EmpoloyeeLogIn />} />
         <Route path="/AgentLogIn" element={<AgentLogIn />} />
-        <Route path="/TackenTicketHome" element={<TackenTicketHome />} />
+        <Route path="/TackenTicketHome" element={<TackenHome />} />
         <Route path="/EmployeeHome" element={<EmployeeHome />} />
 
 

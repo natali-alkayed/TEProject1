@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import TackenList from "./TackenList";
-// import NavbarAgeHome from './NavbarAgeHome';
+import NavbarEmployeeHome from '../NavbarEmployeeHome';
 
 
 function TackenHome() {
@@ -20,7 +20,7 @@ function TackenHome() {
     
     return (
         <>
-        {/* <NavbarAgeHome/> */}
+        <NavbarEmployeeHome/>
             <TackenList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
         

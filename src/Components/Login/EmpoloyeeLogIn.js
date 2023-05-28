@@ -16,7 +16,7 @@ function EmpoloyeeLogIn(props) {
 
         const handleSubmit = (e) => {
           e.preventDefault();
-          navigate('/allagenttickets');
+          navigate('/EmployeeHome');
         };
         return (
         <>

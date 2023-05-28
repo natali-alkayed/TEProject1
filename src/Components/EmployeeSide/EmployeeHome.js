@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import EMMCardList from "./EMMCardList";
-// import NavbarAgeHome from './NavbarAgeHome';
+import NavbarEmployeeHome from './NavbarEmployeeHome';
 
 
 function EmployeeHome() {
@@ -19,7 +19,7 @@ function EmployeeHome() {
     }, []);
     return (
         <>
-        {/* <NavbarAgeHome/> */}
+        <NavbarEmployeeHome/>
             <EMMCardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )

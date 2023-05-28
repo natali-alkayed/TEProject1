@@ -47,7 +47,8 @@ const faqData = require('./faqData.json');  // Import faqData.json
 /*17*/app.patch('/assignTicketByEmployee/:TID', assignTicketByEmployeeHandler);// Agent Ticket Assignment by employee 
 /*18*/app.patch('/addCommentByEmployee/:TID', addCommentByEmployeeHandler); // Add comment on Agent Ticket by employee
 /*19*/app.patch('/RemoveAgentTiketFromEmployeeWindow/:TID', RemoveAgentTiketFromEmployeeWindowHendler);// Remove Agent Tiket From Employee Window
-
+/*20*/app.get('/allAgentTicketsOpen', allAgentTicketsOpenHandler);
+/*21*/app.get('/allAssignTicketByEmployee', allAssignTicketByEmployeeHandler);
 // *********************************************************************************************************************
 
 // handlers ()
@@ -455,7 +456,7 @@ function updateAgentStatusHandler(req, res) {
     let TID = req.params.TID;
     let employeeId = 1; // Replace this with the actual employee ID you want to assign
 
-    let sql = `UPDATE agenttickets SET employeeid = $1 WHERE agentticketid = $2 RETURNING *;`
+    let sql = `UPDATE agenttickets SET employeeid = $1 WHERE agentticketid = $2 RETURNING *`;
 
     client
         .query(sql, [employeeId, TID])
@@ -488,11 +489,10 @@ function updateAgentStatusHandler(req, res) {
 /*19*/function RemoveAgentTiketFromEmployeeWindowHendler(req, res) {
 
     let TID = req.params.TID;
-
-    let sql = `UPDATE agenttickets SET employeeid = $1 WHERE agentticketid = $2 RETURNING *;`
-
+    let sql = `UPDATE agenttickets SET employeeid = $1 WHERE agentticketid =${TID} RETURNING *;`
+    let values=[null];
     client
-        .query(sql, [null, TID])
+        .query(sql,values)
         .then(result => {
             res.send(result.rows);
         })
@@ -503,7 +503,32 @@ function updateAgentStatusHandler(req, res) {
 }
 // ______________________________________________________________________________________________________
 
+/*20*/function allAgentTicketsOpenHandler(req, res) {
+    let sql = `SELECT * FROM agenttickets WHERE agestatus = $1 OR employeeid= $2 ;`
+    let values=['open',null];
+    client
+        .query(sql,values)
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(error => {
+            console.log("error in getting agent tickets", error);
+            res.status(500).send("An error occurred while getting agent tickets");
+        });
+}
 
+/*20*/function allAssignTicketByEmployeeHandler(req, res) {
+    let sql = `SELECT * FROM agenttickets WHERE employeeid= 1`;
+    client
+        .query(sql)
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(error => {
+            console.log("error in getting agent tickets", error);
+            res.status(500).send("An error occurred while getting agent tickets");
+        });
+}
 
 // listen to port if connected to database
 client.connect().then(() => {

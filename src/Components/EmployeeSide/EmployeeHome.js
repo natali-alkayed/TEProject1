@@ -1,15 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CardList from "./CardList";
-import NavbarCustomerHome from './NavbarCustomerHome';
+import EMMCardList from "./EMMCardList";
+// import NavbarAgeHome from './NavbarAgeHome';
 
 
-function CustomerHome() {
+function EmployeeHome() {
     const [AgeData, setAgeData] = useState([]);
     const sendReq = async () => {
-        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/allCustomersTickets`;
+        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/allAgentTicketsOpen`;
         const result = await axios.get(serverUrl);
-        // console.log(result.data);
         setAgeData(result.data);
     }
     const takeNewArrFromAgentCardsPage = (arr) => {
@@ -20,13 +19,13 @@ function CustomerHome() {
     }, []);
     return (
         <>
-        <NavbarCustomerHome/>
-            <CardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
+        {/* <NavbarAgeHome/> */}
+            <EMMCardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )
 }
 
-export default CustomerHome;
+export default EmployeeHome;
 
 
 

@@ -27,10 +27,13 @@ export default function App() {
         <Route path="/sortagticketbystatus/:StaId" element={<SortByStatus />} />
         <Route path="/sortagticketbydepartment/:DepId" element={<SortByDepartment />} />
         <Route path="/sortagticketbypriority/:PriId" element={<SortByPriority />} />
-        <Route path="/searchbyemail" element={<searchByEmail />} />
         <Route path="/CustomerLogIn" element={<CustomerLogIn />} />
         <Route path="/EmpoloyeeLogIn" element={<EmpoloyeeLogIn />} />
         <Route path="/AgentLogIn" element={<AgentLogIn />} />
+        <Route path="/TackenTicketHome" element={<TackenTicketHome />} />
+        <Route path="/EmployeeHome" element={<EmployeeHome />} />
+
+
 
 
 

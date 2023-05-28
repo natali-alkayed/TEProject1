@@ -5,20 +5,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from 'react';
-import SortByStatus from '../Sorting/SortByStatus';
-import SortByPriority from '../Sorting/SortByPriority';
-import SortByDepartment from '../Sorting/SortByDepartment';
+import axios from "axios";
 
-function NavbarAgeHome() {
+
+function NavbarAgeHome(props) {
  
   const [searchEmail, setSearchEmail] = useState('');
   
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    // Perform the search logic using the searchEmail value (e.g., send an API request)
-    console.log('Search by email:', searchEmail);
-    // Reset the search input field
-    // setSearchEmail('');
+    const serverUrl = `${process.env.REACT_APP_SERVER_URL}/SearchInAgentTicket/${searchEmail}`;
+        const result = await axios.get(serverUrl);
+        props.takeNewArrFromAgentCardsPage(result.data);
+    setSearchEmail('');
+
+
   };
 
   return (
@@ -64,7 +65,6 @@ function NavbarAgeHome() {
                 aria-label="Search"
                 // value={searchEmail}
                 onChange={(e) => setSearchEmail(e.target.value)}
-                // onChange={(e) => console.log(e.target.value)}
               />
                 <Button onClick={handleSearch} variant="outline-warning " >Search</Button>
             </Form>
@@ -74,9 +74,7 @@ function NavbarAgeHome() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* <SortByStatus statusData={statusData} />
-      <SortByPriority priorityData={priorityData} />
-      <SortByDepartment  /> */}
+   
 
     </>
   )

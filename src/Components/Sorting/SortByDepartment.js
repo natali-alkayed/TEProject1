@@ -15,7 +15,7 @@ function SortByDepartment(props) {
         const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketByDepartment/${DepId}`;
         const result = await axios.get(serverUrl);
      //   console.log("nataly");
-     console.log(result.data);
+     
         setAgeData(result.data);
     }
     const takeNewArrFromAgentCardsPage = (arr) => {

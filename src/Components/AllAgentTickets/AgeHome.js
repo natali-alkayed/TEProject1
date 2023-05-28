@@ -19,7 +19,7 @@ function AgeHome() {
     }, []);
     return (
         <>
-        <NavbarAgeHome/>
+        <NavbarAgeHome takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
 
             <AgeCardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>

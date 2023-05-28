@@ -1,38 +1,39 @@
 import React from 'react';
 import './AboutUs.css';
-
+import CustomNavbar from '../CustomNavbar/CustomNavbar';
+import Footer from '../Footer/Footer';
 const profiles = [
   {
-    name: 'Fleece Marigold',
-    role: 'Founder',
-    bio: 'Which is worse, that everyone has his price, or that the price is always so low.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg',
-    linkedinUrl: 'https://www.linkedin.com/profile-url-1',
-    githubUrl: 'https://github.com/profile-url-1', // Add GitHub URL for each profile
-  },
-  {
-    name: 'Norman Gordon',
-    role: 'Web Designer',
-    bio: "I'm killing time while I wait for life to shower me with meaning and happiness.",
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample83.jpg',
-    linkedinUrl: 'https://www.linkedin.com/profile-url-2',
-    githubUrl: 'https://github.com/profile-url-2', // Add GitHub URL for each profile
-  },
-  {
-    name: 'Ruby Von Rails',
-    role: 'Public Relations',
+    name: 'Zainab Malkawi',
+    role: 'Electrical Engineer',
     bio: 'The only skills I have the patience to learn are those that have no real application in life.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample70.jpg',
+    image: 'https://i.ibb.co/MGC32w6/zainab.png',
+    linkedinUrl: 'https://www.linkedin.com/in/zainabmalkawi',
+    githubUrl: 'https://github.com/ZainabMalkawi94', // Add GitHub URL for each profile
+  },
+  {
+    name: 'Natali Alkayed',
+    role: 'Computer Engineer',
+    bio: "The only skills I have the patience to learn are those that have no real application in life.",
+    image: 'https://i.ibb.co/jL36w03/Natali.png',
+    linkedinUrl: 'https://www.linkedin.com/in/natali-alkayed-a80b81258',
+    githubUrl: 'https://github.com/natali-alkayed', // Add GitHub URL for each profile
+  },
+  {
+    name: 'Mohammad Al-Omari',
+    role: 'Civil Engineer',
+    bio: 'The only skills I have the patience to learn are those that have no real application in life.',
+    image: 'https://i.ibb.co/3Bb3QjB/omari.png',
     linkedinUrl: 'https://www.linkedin.com/profile-url-3',
-    githubUrl: 'https://github.com/profile-url-3', // Add GitHub URL for each profile
+    githubUrl: 'https://github.com/Mohammad-Abdelkhaleq', // Add GitHub URL for each profile
   },
   {
-    name: 'Ruby Von Rails',
-    role: 'Public Relations',
+    name: 'Mohammad Shawabkeh',
+    role: 'Civil Engineer',
     bio: 'The only skills I have the patience to learn are those that have no real application in life.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample70.jpg',
+    image: 'https://i.ibb.co/RSfnjhv/shawabkeh.png',
     linkedinUrl: 'https://www.linkedin.com/profile-url-4',
-    githubUrl: 'https://github.com/profile-url-4', // Add GitHub URL for each profile
+    githubUrl: 'https://github.com/mohamadshawabkeh', // Add GitHub URL for each profile
   }
 ];
 
@@ -53,33 +54,24 @@ const ProfileCard = ({ name, role, bio, image, linkedinUrl, githubUrl }) => (
   </figure>
 );
 
-const AboutUs = () => (
+const AboutUs = () => {
+  return (
+<>
+{/* <CustomNavbar/> */}
   <div>
     <div className="content-container">
-      <div className="header-image">
-        <img src="http://www.avmizo.in/images/about.png" alt="Header" />
-      </div>
-      <div className="content">
-        <h2>Who We Are</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
-          dolor vitae risus consectetur vestibulum. Nulla non eros elementum,
-          volutpat metus quis, iaculis ipsum.
-        </p>
-        <h2>Our Ambition</h2>
-        <p>
-          Sed aliquam tincidunt tortor non tincidunt. Integer in faucibus erat.
-          Donec facilisis, odio at feugiat tristique, mauris est dictum sem, id
-          vulputate lectus est a odio.
-        </p>
-      </div>
-    </div>
+      <h1>Our Team</h1>
+    </div> 
+ 
     <div className="card-container">
       {profiles.map((profile, index) => (
         <ProfileCard key={index} {...profile} />
       ))}
     </div>
   </div>
+{/* <Footer/> */}
+</>
 );
+      }
 
 export default AboutUs;

@@ -3,32 +3,25 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 
 .about-us {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #d4d4d4;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.header-image img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .content {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .content-container {
-  background-color: #ccc;
-  color: #fff;
+  /* background-color: #ccc; */
+  color: black;
   padding: 20px;
   border-radius: 8px;
   display: flex;
@@ -42,12 +35,7 @@
   margin-bottom: 10px;
 }
 
-.content p {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.4;
-}
+
 
 .card-container {
   display: flex;
@@ -63,7 +51,7 @@
   min-width: 230px;
   max-width: 315px;
   width: 100%;
-  color: #000000;
+  color: whitesmoke;
   text-align: center;
   line-height: 1.4em;
   font-size: 14px;
@@ -81,7 +69,7 @@
   z-index: 1;
   position: relative;
   padding: 10px;
-  border: 2px solid #e8b563;
+  border: 2px solid #FFD300;
 }
 
 .snip1515 .profile-image img {
@@ -91,8 +79,8 @@
 
 .snip1515 figcaption {
   width: 100%;
-  background-color: #f2f2f2;
-  color: #555;
+  background-color: rgb(33,37,41);
+  color: whitesmoke;
   padding: 125px 25px 25px;
   margin-top: -100px;
   display: inline-block;
@@ -107,11 +95,11 @@
 .snip1515 h3 {
   font-weight: 600;
   font-size: 1.3em;
-  font-family: 'Playfair Display', Arial, sans-serif;
+  font-family:'Open Sans', Arial, sans-serif;
 }
 
 .snip1515 h4 {
-  color: #8c8c8c;
+  color: whitesmoke;
   font-weight: 400;
   letter-spacing: 2px;
 }
@@ -132,7 +120,7 @@
   display: inline-block;
   font-size: 18px;
   font-weight: normal;
-  color: #e8b563;
+  color: #FFD300;
   opacity: 0.75;
 }
 
@@ -147,11 +135,3 @@
   justify-content: space-between;
 }
 
-/* Additional styles for close container positioning */
-.about-us {
-  margin-top: 20px;
-}
-
-.content-container {
-  margin-top: 0;
-}

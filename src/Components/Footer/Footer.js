@@ -24,10 +24,6 @@ function Footer() {
               className="img-responsive center-block"
               alt=""
             />
-            <p>
-            A customer support ticketing system is a software application or web-based platform that helps organizations manage and track customer inquiries, issues, or support requests in a structured and organized manner. It serves as a central hub for customer support teams
-             to receive, manage, and resolve customer tickets or cases efficiently.
-            </p>
             <div className="social-media">
               <ul className="list-inline">
                 <li>

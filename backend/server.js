@@ -37,7 +37,7 @@ const faqData = require('./faqData.json');  // Import faqData.json
 //agent side
 /*10*/app.post('/creatAgentTicket/:TID', CreatAgentTicketHandler);    //add agent ticket to AgentTicket table acoording to customer Ticket ID
 /*11*/ app.get('/allAgentTickets', allAgentTicketsHandler); //get all agent tickets
-/*12*/app.get('/SearchInAgentTicket', SearchInAgentTicketHandler); //search in agent ticket based on customer's email
+/*12*/app.get('/SearchInAgentTicket/:cemail', SearchInAgentTicketHandler); //search in agent ticket based on customer's email
 /*13*/app.patch('/CloseAgenttTicket/:TID', CloseAgentTicketHandler);//close AgentTicket 
 /*14*/app.get('/sortAgTicketByStatus/:StsNo', sortingAgentTicketsByStatus);// sorte agent tickets according to status (closed or open)
 /*15*/app.get('/sortAgTicketbyPriority/:PriNo', sortingAgentTicketsByPriority);// sorte agent tickets according to priority (high, medium, low)
@@ -282,7 +282,7 @@ function updateAgentStatusHandler(req, res) {
 
 
 /*12*/function SearchInAgentTicketHandler(req, res) {
-    let Cemial = req.query.cemail;
+    let Cemial = req.params.cemail;
     console.log(Cemial);
     const sql = `
     SELECT agenttickets.agentticketid, agenttickets.agesubject, agenttickets.agentdescription, agenttickets.agepriority, agenttickets.employeecomment ,agenttickets.agestatus

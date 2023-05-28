@@ -1,37 +1,43 @@
 import React from 'react';
-import SlideShow from './SlideShow';
 import '../Home/Home.css';
 import FAQSearchBar from '../FAQ/FAQSearchBar';
 import AboutUs from '../AboutUs/AboutUs';
 import LogInSlide from './LogInSlide';
-import CustomNavbar from './CustomNavbar';
-import Footer from './Footer';
+import CustomNavbar from '../CustomNavbar/CustomNavbar';
+import Footer from '../Footer/Footer';
 
 
 function Home() {
     return (
       <>
       <CustomNavbar/>
-      <SlideShow/> 
+      <img
+          className="d-block w-100 carousel-image"
+          src="https://i.ibb.co/Bn0wbTC/1.jpg"
+          alt="First slide"
+        />
        
-      {/* <div className="navbar-container"> */}
-
-
-      {/* </div>
-
-      //  <div className="background-image">
-
-       </div> */}
-
-
-        {/* <Footer /> */}
-{/* 
-
-    <LogInSlide />
-    <img src="https://www.wenovio.com/wp-content/uploads/2021/10/blogue-faq-banner.png"/>
-      <FAQSearchBar />  */}
-{/* 
-      <AboutUs /> */}
+      
+        <img
+          className="d-block w-100 carousel-image"
+          src="https://i.ibb.co/XDHkzCv/2.jpg"
+          alt="Second slide"
+        />
+     
+        <img
+          className="d-block w-100 carousel-image"
+          src="https://i.ibb.co/jVRtj7x/3.jpg"
+          alt="Third slide"
+        />
+        
+      
+        <img
+          className="d-block w-100 carousel-image"
+          src="https://i.ibb.co/7WcLQrc/4.jpg"
+          alt="Third slide"
+        />
+       
+      <AboutUs/>
 
       </>
     );

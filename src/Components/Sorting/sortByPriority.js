@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CardList from "./CardList";
-import NavbarAgeHome from './NavbarAgeHome';
+// import CardList from "./CardList";
+// import NavbarAgeHome from './NavbarAgeHome';
 
 
-function sortbyPriority() {
+function sortByPriority() {
     const [AgeData, setAgeData] = useState([]);
     const sendReq = async () => {
         const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketbyPriority/:${PriNo}`;
@@ -26,4 +26,4 @@ function sortbyPriority() {
     )
 }
 
-export default sortbyPriority;
+export default sortByPriority;

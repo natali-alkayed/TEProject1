@@ -17,7 +17,7 @@ function CardList(props) {
                     </Col>
                 ))}
              </Row> 
-            <Cardds takeNewArr={takeNewArr} />
+            {/* <Cardds takeNewArr={takeNewArr} /> */}
         </>
     );
 

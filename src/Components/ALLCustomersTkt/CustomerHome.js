@@ -1,16 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CardList from "./CardList";
-import NavbarAgeHome from './NavbarAgeHome';
+import NavbarCustomerHome from './NavbarCustomerHome';
 
 
-function sortByStatus(props) {
+function CustomerHome() {
     const [AgeData, setAgeData] = useState([]);
-    console.log(props.depData);
     const sendReq = async () => {
-        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketbyStatus/:${DepNo}`;
+        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/allCustomersTickets`;
         const result = await axios.get(serverUrl);
-     //   console.log("nataly");
+        // console.log(result.data);
         setAgeData(result.data);
     }
     const takeNewArrFromAgentCardsPage = (arr) => {
@@ -21,10 +20,21 @@ function sortByStatus(props) {
     }, []);
     return (
         <>
-        <NavbarAgeHome/>
+        <NavbarCustomerHome/>
             <CardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )
 }
 
-export default sortByStatus;
+export default CustomerHome;
+
+
+
+
+
+
+
+   
+
+    
+  

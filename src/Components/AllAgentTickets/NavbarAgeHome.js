@@ -18,7 +18,7 @@ function NavbarAgeHome(props) {
 
   return (
     <>
-      <Navbar bg="light" expand="lg" >
+      <Navbar bg="dark" variant="dark" expand="lg" sticky="top" >
         <Container fluid>
           <Navbar.Brand href="#">Agent Side</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -50,14 +50,14 @@ function NavbarAgeHome(props) {
               </NavDropdown>
 
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" style={{marginRight:'2px'}}>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-warning ">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

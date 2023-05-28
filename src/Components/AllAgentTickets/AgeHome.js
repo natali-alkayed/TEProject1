@@ -1,16 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CardList from "./CardList";
+import AgeCardList from "./AgeCardList";
 import NavbarAgeHome from './NavbarAgeHome';
 
 
-function sortByDepartment(props) {
+function AgeHome() {
     const [AgeData, setAgeData] = useState([]);
-    console.log(props.depData);
     const sendReq = async () => {
-        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketByDepartment/:${DepNo}`;
+        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/allAgentTickets`;
         const result = await axios.get(serverUrl);
-     //   console.log("nataly");
         setAgeData(result.data);
     }
     const takeNewArrFromAgentCardsPage = (arr) => {
@@ -22,9 +20,20 @@ function sortByDepartment(props) {
     return (
         <>
         <NavbarAgeHome/>
-            <CardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
+            <AgeCardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )
 }
 
-export default sortByDepartment;
+export default AgeHome;
+
+
+
+
+
+
+
+   
+
+    
+  

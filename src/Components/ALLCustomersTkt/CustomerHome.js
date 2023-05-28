@@ -20,7 +20,7 @@ function CustomerHome() {
     }, []);
     return (
         <>
-        <NavbarCustomerHome/>
+        {/* <NavbarCustomerHome/> */}
             <CardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )

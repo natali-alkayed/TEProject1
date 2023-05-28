@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from 'react';
 // import sortByStatus from "./sortByStatus";
-// import sortByDepartment from "./sortByDepartment";
 // import sortbyPriority from "./sortbyPriority";
 
 
@@ -37,9 +36,7 @@ function NavbarAgeHome(props) {
         </Container>
       </Navbar>
 
-      <sortByStatus statusData={statusData} />
-      <sortbyPriority priorityData={priorityData} />
-      <sortByDepartment depData={depData} />
+   
 
     </>
   )

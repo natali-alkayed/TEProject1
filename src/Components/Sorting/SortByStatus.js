@@ -1,15 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import CardList from "./CardList";
-// import NavbarAgeHome from './NavbarAgeHome';
+import NavbarAgeHome from "../AllAgentTickets/NavbarAgeHome";
+import { useParams } from 'react-router-dom';
+import AgeCardList  from './AgeCardList';
 
 
-function sortByPriority() {
+function SortByStatus(props) {
     const [AgeData, setAgeData] = useState([]);
+
+    const { StaId } = useParams();
+
     const sendReq = async () => {
-        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketbyPriority/:${PriNo}`;
+        const serverUrl = `${process.env.REACT_APP_SERVER_URL}/sortAgTicketbyStatus/${StaId}`;
         const result = await axios.get(serverUrl);
-        // console.log(result.data);
+     //   console.log("nataly");
         setAgeData(result.data);
     }
     const takeNewArrFromAgentCardsPage = (arr) => {
@@ -21,9 +26,9 @@ function sortByPriority() {
     return (
         <>
         <NavbarAgeHome/>
-            <CardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
+        <AgeCardList dataList={AgeData} takeNewArrFromAgentCardsPage ={takeNewArrFromAgentCardsPage} />
         </>
     )
 }
 
-export default sortByPriority;
+export default SortByStatus;

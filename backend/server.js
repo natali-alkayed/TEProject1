@@ -351,7 +351,7 @@ function updateAgentStatusHandler(req, res) {
 /*15*/function sortingAgentTicketsByPriority(req, res) {
     let priority = req.params.PriNo; // Assuming priority is provided as a query parameter
     console.log(priority);
-    if (priority == 'high') {
+    if (priority == 1) {
         let sql = `SELECT * FROM agenttickets WHERE agepriority = $1;`
         let values = ['high'];
         client
@@ -364,7 +364,7 @@ function updateAgentStatusHandler(req, res) {
             res.status(500).send("An error occurred while sorting agent tickets by priority");
         });
     }
-    else if (priority == 'medium') {
+    else if (priority ==2) {
         let sql = `SELECT * FROM agenttickets WHERE agepriority = $1 ;`
         let values = ['medium'];
         client
@@ -377,7 +377,7 @@ function updateAgentStatusHandler(req, res) {
             res.status(500).send("An error occurred while sorting agent tickets by priority");
         });
     }
-    else if (priority == 'low') {
+    else if (priority == 3) {
         let sql = `SELECT * FROM agenttickets WHERE agepriority = $1;`
         let values = ['low'];
         client
@@ -396,60 +396,54 @@ function updateAgentStatusHandler(req, res) {
 
 /*16*/function sortingAgentTicketsByDepartment(req, res) {
     let departmentId = req.params.DepNo; // Assuming departmentId is provided as a query parameter
-    if (departmentId == 1) {
-        let sql = `SELECT * FROM agenttickets WHERE departmentId = $1`;
-        let values = ['1'];
+    // if (departmentId == 1) {
+        let sql = `SELECT * FROM agenttickets WHERE departmentId = ${departmentId}`;
+        // let values = ['1'];
         client
-        .query(sql, values)
+        .query(sql)
         .then(result => {
-            if (result.rows.length === 0) {
-                res.send('No tickets available in this department');
-            } else {
                 res.send(result.rows);
-            }
         })
         .catch(error => {
             console.log("Error in sorting agent tickets by department ID:", error);
             res.status(500).send("An error occurred while sorting agent tickets by department ID");
         });
 
-    }
-    else if (departmentId == 2) {
-        let sql = `SELECT * FROM agenttickets WHERE departmentId = $1`;
-        let values = ['2'];
-        client
-        .query(sql, values)
-        .then(result => {
-            if (result.rows.length === 0) {
-                res.send('No tickets available in this department');
-            } else {
-                res.send(result.rows);
-            }
-        })
-        .catch(error => {
-            console.log("Error in sorting agent tickets by department ID:", error);
-            res.status(500).send("An error occurred while sorting agent tickets by department ID");
-        });
+    // }
+    // else if (departmentId == 2) {
+    //     let sql = `SELECT * FROM agenttickets WHERE departmentId = $1`;
+    //     let values = ['2'];
+    //     client
+    //     .query(sql, values)
+    //     .then(result => {
+            
+    //             res.send(result.rows);
+            
+    //     })
+    //     .catch(error => {
+    //         console.log("Error in sorting agent tickets by department ID:", error);
+    //         res.status(500).send("An error occurred while sorting agent tickets by department ID");
+    //     });
 
-    } 
-    else if (departmentId == 3) {
-        let sql = `SELECT * FROM agenttickets WHERE departmentId = $1`;
-        let values = ['3'];
-        client
-        .query(sql, values)
-        .then(result => {
-            if (result.rows.length === 0) {
-                res.send('No tickets available in this department');
-            } else {
-                res.send(result.rows);
-            }
-        })
-        .catch(error => {
-            console.log("Error in sorting agent tickets by department ID:", error);
-            res.status(500).send("An error occurred while sorting agent tickets by department ID");
-        });
+    // } 
+    // else if (departmentId == 3) {
+    //     let sql = `SELECT * FROM agenttickets WHERE departmentId = $1`;
+    //     let values = ['3'];
+    //     client
+    //     .query(sql, values)
+    //     .then(result => {
+    //         if (result.rows.length === 0) {
+    //             res.send('No tickets available in this department');
+    //         } else {
+    //             res.send(result.rows);
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.log("Error in sorting agent tickets by department ID:", error);
+    //         res.status(500).send("An error occurred while sorting agent tickets by department ID");
+    //     });
 
-    }
+    // }
 
 }
 

@@ -19,9 +19,9 @@ export default function App() {
     <>
 
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/faq" element={<FAQSearchBar />} />
-      <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/faq" element={<FAQSearchBar />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/" element={<AgeHome />} />
         <Route path="/allagenttickets" element={<AgeHome />} />
         <Route path="/allcustomerstickets" element={<CustomerHome />} />
@@ -33,11 +33,7 @@ export default function App() {
         <Route path="/AgentLogIn" element={<AgentLogIn />} />
         <Route path="/TackenTicketHome" element={<TackenHome />} />
         <Route path="/EmployeeHome" element={<EmployeeHome />} />
-
-
-
-
-
+      
       </Routes>
       {/* <Cardds/> */}
     </>

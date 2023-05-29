@@ -255,8 +255,8 @@ function updateAgentStatusHandler(req, res) {
 /*10*/function CreatAgentTicketHandler(req, res) {
     let newAgentTicket = req.body;
     let TID = req.params.TID;
-    let sql = `INSERT INTO agenttickets (agesubject, agentdescription, agepriority,departmentid,customerticketid,agestatus) VALUES ($1, $2, $3, $4, $5,$6) RETURNING *`;
-    let values = [newAgentTicket.agesubject, newAgentTicket.agentdescription, newAgentTicket.agepriority, newAgentTicket.departmentid, TID, "open"];
+    let sql = `INSERT INTO agenttickets (agesubject, agentdescription, agepriority,departmentid,customerticketid,agestatus,employeeid) VALUES ($1, $2, $3, $4, $5,$6,$7) RETURNING *`;
+    let values = [newAgentTicket.agesubject, newAgentTicket.agentdescription, newAgentTicket.agepriority, newAgentTicket.departmentid, TID, "open",7];
     client
         .query(sql, values)
         .then(result => {
@@ -454,7 +454,7 @@ function updateAgentStatusHandler(req, res) {
 /*17*/function assignTicketByEmployeeHandler(req, res) {
 
     let TID = req.params.TID;
-    let employeeId = 1; // Replace this with the actual employee ID you want to assign
+    let employeeId = 8; // Replace this with the actual employee ID you want to assign
 
     let sql = `UPDATE agenttickets SET employeeid = $1 WHERE agentticketid = $2 RETURNING *`;
 
@@ -504,8 +504,9 @@ function updateAgentStatusHandler(req, res) {
 // ______________________________________________________________________________________________________
 
 /*20*/function allAgentTicketsOpenHandler(req, res) {
-    let sql = `SELECT * FROM agenttickets WHERE agestatus = $1 OR employeeid= $2 ;`
-    let values=['open',null];
+    let sql = `SELECT * FROM agenttickets WHERE agestatus = $1 AND employeeid = $2;`
+    
+    let values=['open',7];
     client
         .query(sql,values)
         .then(result => {
@@ -518,7 +519,7 @@ function updateAgentStatusHandler(req, res) {
 }
 
 /*20*/function allAssignTicketByEmployeeHandler(req, res) {
-    let sql = `SELECT * FROM agenttickets WHERE employeeid= 1`;
+    let sql = `SELECT * FROM agenttickets WHERE employeeid= 8`;
     client
         .query(sql)
         .then(result => {

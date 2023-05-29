@@ -16,7 +16,7 @@ function EmployeeHome() {
     }
     useEffect(() => {
         sendReq();
-    }, []);
+    }, [AgeData]);
     return (
         <>
         <NavbarEmployeeHome/>

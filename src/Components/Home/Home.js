@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 
 
 function Home() {
+
     return (
       <>
       <CustomNavbar/>
@@ -15,6 +16,7 @@ function Home() {
           className="d-block w-100 carousel-image"
           src="https://i.ibb.co/Bn0wbTC/1.jpg"
           alt="First slide"
+          
         />
        
       
@@ -36,9 +38,12 @@ function Home() {
           src="https://i.ibb.co/7WcLQrc/4.jpg"
           alt="Third slide"
         />
-       
-      <AboutUs/>
+      
+      <section id="about-us" style={{ paddingBottom: '10px', background: 'lightgray' }}>
+        <AboutUs />
+      </section>
 
+<Footer/>
       </>
     );
   }

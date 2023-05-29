@@ -32,11 +32,10 @@ const profiles = [
     role: 'Civil Engineer',
     bio: 'The only skills I have the patience to learn are those that have no real application in life.',
     image: 'https://i.ibb.co/RSfnjhv/shawabkeh.png',
-    linkedinUrl: 'https://www.linkedin.com/profile-url-4',
+    linkedinUrl: 'https://www.linkedin.com/in/mohammad-shawabkeh-aaab331b2/',
     githubUrl: 'https://github.com/mohamadshawabkeh', // Add GitHub URL for each profile
   }
 ];
-
 const ProfileCard = ({ name, role, bio, image, linkedinUrl, githubUrl }) => (
   <figure className="snip1515">
     <div className="profile-image">
@@ -53,7 +52,6 @@ const ProfileCard = ({ name, role, bio, image, linkedinUrl, githubUrl }) => (
     </figcaption>
   </figure>
 );
-
 const AboutUs = () => {
   return (
 <>
@@ -61,8 +59,7 @@ const AboutUs = () => {
   <div>
     <div className="content-container">
       <h1>Our Team</h1>
-    </div> 
- 
+    </div>
     <div className="card-container">
       {profiles.map((profile, index) => (
         <ProfileCard key={index} {...profile} />
@@ -73,5 +70,4 @@ const AboutUs = () => {
 </>
 );
       }
-
 export default AboutUs;
